@@ -24,11 +24,9 @@ char	*join(char const *str1, char const *str2)
 {
 	char		*join;
 	char		*result;
-	const char	*ptr;
 	const char	*s;
 
 	s = str1;
-	ptr = str2;
 	if (!str1 || !str2)
 		return (NULL);
 	join = (char *)malloc(ft_strlen(str1) + ft_strlen(str2) + 2);

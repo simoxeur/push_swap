@@ -12,31 +12,43 @@
 
 #include "push_swap_bonus.h"
 
-void	apply_move(t_stack **lst_a, t_stack **lst_b, t_count *count, char *move)
+static void	moving(t_stack **lst_a, t_stack **lst_b, t_count *count, char *mv)
 {
-	if (ft_strcmp_4moves(move, "sa") == 0)
+	if (ft_strcmp_4moves(mv, "sa") == 0)
 		swap(lst_a, count->count_a);
-	else if (ft_strcmp_4moves(move, "sb") == 0)
+	else if (ft_strcmp_4moves(mv, "sb") == 0)
 		swap(lst_b, count->count_b);
-	else if (ft_strcmp_4moves(move, "ra") == 0)
+	else if (ft_strcmp_4moves(mv, "ra") == 0)
 		rotate(lst_a, count->count_a);
-	else if (ft_strcmp_4moves(move, "rb") == 0)
+	else if (ft_strcmp_4moves(mv, "rb") == 0)
 		rotate(lst_b, count->count_b);
-	else if (ft_strcmp_4moves(move, "rra") == 0)
+	else if (ft_strcmp_4moves(mv, "rra") == 0)
 		reverse_rotate(lst_a, count->count_a);
-	else if (ft_strcmp_4moves(move, "rrb") == 0)
+	else if (ft_strcmp_4moves(mv, "rrb") == 0)
 		reverse_rotate(lst_b, count->count_b);
-	else if (ft_strcmp_4moves(move, "pb") == 0)
+	else if (ft_strcmp_4moves(mv, "pb") == 0)
 		push(lst_a, lst_b, &count->count_a, &count->count_b);
-	else if (ft_strcmp_4moves(move, "pa") == 0)
+	else if (ft_strcmp_4moves(mv, "pa") == 0)
 		push(lst_b, lst_a, &count->count_b, &count->count_a);
-	else if (ft_strcmp_4moves(move, "ss") == 0)
+	else if (ft_strcmp_4moves(mv, "ss") == 0)
 		ss(lst_a, lst_b, *count, 0);
-	else if (ft_strcmp_4moves(move, "rr") == 0)
+	else if (ft_strcmp_4moves(mv, "rr") == 0)
 		rr(lst_a, lst_b, *count, 0);
-	else if (ft_strcmp_4moves(move, "rrr") == 0)
+	else if (ft_strcmp_4moves(mv, "rrr") == 0)
 		rrr(lst_a, lst_b, *count, 0);
-	else
-		error_msg();
-	free(move);
+	free(mv);
+}
+
+void	app_move(t_stack **lst_a, t_stack **lst_b, t_count *count, t_move *mv)
+{
+	t_move	*tmp;
+
+	tmp = NULL;
+	while (mv)
+	{
+		moving(lst_a, lst_b, count, mv->move);
+		tmp = mv;
+		mv = mv->next;
+		free(tmp);
+	}
 }

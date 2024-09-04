@@ -15,7 +15,7 @@ SRCS		=	srcs/listing.c			srcs/loading.c		srcs/stackA_moves.c		srcs/stackB_moves.
 
 SRCS_MANDATORY = mandatory/push_swap.c	mandatory/parsing.c		mandatory/sort_nbr.c	mandatory/sort_nbr2.c	mandatory/appending.c	mandatory/a_to_b.c	mandatory/b_to_a.c
 
-SRCS_BNS	=   bonus/push_swap_bonus.c		bonus/reading.c		bonus/applicate.c		bonus/check_sort.c	bonus/parsing_bonus.c 
+SRCS_BNS	=   bonus/push_swap_bonus.c		bonus/reading.c		bonus/applicate.c		bonus/check_sort.c	bonus/parsing_bonus.c	bonus/lst_move.c 
 
 gnl			=	bonus/gnl/get_next_line.c	bonus/gnl/get_next_line_utils.c
 

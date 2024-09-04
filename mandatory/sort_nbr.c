@@ -14,12 +14,8 @@
 
 void	sort_nbrs(t_stack **lst_a, t_stack **lst_b, t_count *count)
 {
-	int	i;
-	int	rotatimes;
 	int	med;
 
-	i = 0;
-	rotatimes = 0;
 	med = 0;
 	while (count->count_a > 3)
 	{

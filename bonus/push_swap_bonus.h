@@ -20,9 +20,16 @@
 # include "../srcs/srcs.h"
 # include "gnl/get_next_line.h"
 
+typedef struct s_move
+{
+	char			*move;
+	struct s_move	*next;
+}	t_move;
+
 void	read_instractions(t_stack **lst_a, t_stack **lst_b, t_count *count);
-void	apply_move(t_stack **lst_a, t_stack **lst_b, t_count *count, char *mv);
+void	app_move(t_stack **lst_a, t_stack **lst_b, t_count *count, t_move *mv);
 void	check_if_sorted(t_stack **lst_a, t_count count);
 long	*get_nbrs(char *str, int *count);
+void	add_move(t_move **lst, char *mv);
 
 #endif

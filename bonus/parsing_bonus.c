@@ -44,31 +44,11 @@ static int	find_reps(long *numbers, int count)
 	return (0);
 }
 
-static int	check_ifsorted(long *numbers, int count)
-{
-	int	i;
-	int	xtime;
-
-	i = 0;
-	xtime = 0;
-	while (i < count - 1)
-	{
-		if (numbers[i] < numbers[i + 1])
-			xtime++;
-		i++;
-	}
-	if (xtime + 1 == count)
-		return (-2);
-	return (0);
-}
-
 static void	check_validity(long *numbers, int count, int *valide)
 {
 	int	reps;
-	int	check_sort;
 
 	reps = find_reps(numbers, count);
-	check_sort = check_ifsorted(numbers, count);
 	*valide = reps;
 }
 

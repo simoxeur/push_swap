@@ -87,14 +87,10 @@ void	reverse_rotate(t_stack **lst, int count)
 void	push(t_stack **lst_from, t_stack **lst_to, int *c_from, int *c_to)
 {
 	t_stack	*first;
-	t_stack	*seconde;
-	t_stack	*last;
 
 	if (!*lst_from || *c_from == 0)
 		return ;
 	first = *lst_from;
-	seconde = first->next;
-	last = first->back;
 	if (*c_to > 0)
 		add_front(lst_to, addnode(first->data, 0), c_to);
 	if (*c_to == 0)

@@ -76,12 +76,8 @@ static void	rotate_to(t_stack **lst_a, t_stack **lst_b, t_count *c)
 void	b_to_a(t_stack **lst_a, t_stack **lst_b, t_count *count)
 {
 	int		min_id;
-	int		i;
-	t_count	ids;
 
-	ids.cheap_id = 0;
 	min_id = 0;
-	i = 0;
 	while (count->count_b)
 	{
 		append_target(lst_a, lst_b, *count);

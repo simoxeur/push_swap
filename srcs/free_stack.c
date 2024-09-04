@@ -14,9 +14,6 @@
 
 void	free_stack(t_stack **lst, int count)
 {
-	int	i;
-
-	i = 0;
 	if (!lst || !*lst || count == 0)
 		return ;
 	while (count > 1)

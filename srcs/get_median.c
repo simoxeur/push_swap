@@ -39,11 +39,11 @@ int	get_median(t_stack *lst, int count)
 	long	tmp;
 	int		*sorted_nbr;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	tmp = 0;
 	sorted_nbr = extract_nbr(lst, count);
-	while (i < count)
+	while (++i < count)
 	{
 		j = 0;
 		while (j < count)
@@ -56,7 +56,7 @@ int	get_median(t_stack *lst, int count)
 			}
 			j++;
 		}
-		i++;
 	}
-	return (free(sorted_nbr), (sorted_nbr[count / 2]));
+	i = sorted_nbr[count / 2];
+	return (free(sorted_nbr), i);
 }

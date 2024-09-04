@@ -46,13 +46,9 @@ static void	find_lower(t_stack **lst, int count, int *id)
 
 void	botom_push(t_stack **lst_a, t_stack **lst_b, t_count *count)
 {
-	int		i;
 	int		id;
-	t_stack	*current;
 
-	i = 0;
 	id = 0;
-	current = *lst_a;
 	if (count->count_a == 5 || count->count_a == 4)
 		handl_five(lst_a, lst_b, count);
 	while (count->count_a > 3)
