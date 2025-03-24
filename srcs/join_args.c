@@ -37,7 +37,10 @@ char	*join_args(char *argv[])
 	while (argv[i])
 	{
 		if (!*argv[i])
+		{
+			free(joined_args);
 			error_msg();
+		}
 		check_sp(argv[i]);
 		joined_args = join(joined_args, argv[i]);
 		if (!joined_args)
